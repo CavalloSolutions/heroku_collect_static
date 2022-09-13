@@ -27,7 +27,7 @@ if [ -z "${APP_BASE:-}" ] ; then
     log "APP_BASE not set."
 else
     MANAGE_FILE="$APP_BASE/manage.py"
-    if test -f "$FILE"; then
+    if test -f "$MANAGE_FILE"; then
         log "Running '$MANAGE_FILE collectstatic'"
         python $MANAGE_FILE collectstatic | indent
     else
