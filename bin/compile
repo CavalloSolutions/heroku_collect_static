@@ -17,10 +17,6 @@ cd $BUILD_DIR
 
 BUILDPACK_VARIABLES="APP_BASE"
 
-for env_file in "$ENV_DIR"/POETRY_* ; do
-    export "$(basename "$env_file")=$(cat "$env_file" 2>/dev/null)"
-done
-
 for env_file in $BUILDPACK_VARIABLES ; do
     [ -f "$ENV_DIR/$env_file" ] && export "$(basename "$env_file")=$(cat "$ENV_DIR/$env_file" 2>/dev/null)"
 done
