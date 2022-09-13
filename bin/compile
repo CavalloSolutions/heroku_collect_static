@@ -13,6 +13,8 @@ function indent() {
 export BUILD_DIR="$1"
 export ENV_DIR="$3"
 
+cd $BUILD_DIR
+
 BUILDPACK_VARIABLES="APP_BASE"
 
 for env_file in "$ENV_DIR"/POETRY_* ; do
